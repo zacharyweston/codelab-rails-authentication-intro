@@ -8,7 +8,7 @@ class BooksController < ApplicationController
       @books = Book.
         where(on_shelf: true).
         where('LOWER(title) LIKE LOWER(?)', "%#{params[:title_search]}%").
-        order(created_at: :desc)
+        order(updated_at: :desc)
         # returns all the published posts where the value of
         # `params[:title_search]` case-insensitively matches the
         # title of the post, with results listed in descending
