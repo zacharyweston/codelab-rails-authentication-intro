@@ -29,3 +29,10 @@
 <br>
 
 <%= link_to 'New Book', new_book_path %>
+
+<br>
+<br>
+
+<%= form_tag books_path, method: :get do %>
+  <%= text_field_tag :title_search, params[:title_search] %>
+<% end %>

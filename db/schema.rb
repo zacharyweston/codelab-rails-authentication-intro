@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160925215554) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title",      default: "",   null: false
-    t.integer  "page_count",                null: false
+    t.integer  "page_count", default: 0,    null: false
     t.boolean  "on_shelf",   default: true, null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
