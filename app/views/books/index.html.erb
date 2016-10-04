@@ -34,5 +34,13 @@
 <br>
 
 <%= form_tag books_path, method: :get do %>
-  <%= text_field_tag :title_search, params[:title_search] %>
+  <%= text_field_tag :title_search, params[:title_search], placeholder: 'Search by title' %>
+  <br />
+  <h3>Search on-shelf books only?</h3>
+  <%= check_box_tag :on_shelf, true, params[:on_shelf]=='true' %>
+  <br />
+  <h3>Pages</h3>
+  <%= number_field_tag :min_page_count, params[:min_page_count], placeholder: 'Minimum' %>
+  <%= number_field_tag :max_page_count, params[:max_page_count], placeholder: 'Maximum'  %>
+  <%= button_tag "Search" %>
 <% end %>
