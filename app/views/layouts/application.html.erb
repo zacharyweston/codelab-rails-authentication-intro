@@ -15,5 +15,29 @@
   <li><a href="<%= books_path %>">Books</a></li>
 </ul>
 
+<div class="user-status">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>.
+    <%= link_to "Sign out", sign_out_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", sign_in_path %>
+  <% end %>
+</div>
+
+<!-- For each flash message -->
+<% flash.each do |type, content| %>
+  <!--
+    Display a `div` element with a class of `type`, so that we can
+    give different styles to alerts (which are usually errors or when
+    something has gone wrong) than to notices (which are usually)
+    just informational, like letting a user know something was
+    successful.
+  -->
+  <div class="<%= type %>">
+    <!-- Display the content of the message inside a `p` element. -->
+    <p><%= content %></p>
+  </div>
+<% end %>
+
 </body>
 </html>

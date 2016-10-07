@@ -14,14 +14,18 @@
 
   <tbody>
     <% @books.each do |book| %>
+    <div>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.page_count %></td>
         <td><%= book.on_shelf %></td>
         <td><%= link_to 'Show', book %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
+    </div>
     <% end %>
   </tbody>
 </table>

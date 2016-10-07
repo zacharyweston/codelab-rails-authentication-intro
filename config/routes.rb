@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get '/sign-in' => 'sessions#new'
+  post '/session' => 'sessions#create'
+  delete '/sign-out' => 'sessions#destroy'
+
   root 'static#home'
 
   resources :books

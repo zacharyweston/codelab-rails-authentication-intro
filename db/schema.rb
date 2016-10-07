@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925215554) do
+ActiveRecord::Schema.define(version: 20161007030156) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title",      default: "",   null: false
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20160925215554) do
     t.boolean  "on_shelf",   default: true, null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
