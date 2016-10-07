@@ -32,7 +32,11 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<div>
+  <% if user_signed_in? %>
+    <%= link_to 'New Book', new_book_path %>
+  <% end %>
+</div>
 
 <br>
 <br>
